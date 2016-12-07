@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"></meta>
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div id="container" class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 no-padding">
+                <ul id="navigation-bar" data-action="nav-bar-click" class="nav nav-pills nav-stacked">
+                    <li  role="presentation" class="active"><a href="#dashboard" data-navigate="dashboard">Home</a></li>
+                    <li  role="presentation"><a href="#profile" data-navigate="profile">Profile</a></li>
+                    <li  role="presentation"><a href="#">Logout</a></li>
+                </ul>
+            </div>
+            <div class="col-md-9 no-padding content">
+                <section id="dashboard" class="active-section" >
+                <h1 class="page-title">Dashboard</h1>
+                <ol class="breadcrumb breadcrumb-small">
+                    <li><a href="#dashboard">Home</a></li>
+                    <li class="active">User list</li>
+                </ol>
+                <hr>
+                <table id="userlist" class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Username</th>
+                        <th>Birthday</th>
+                        <th>City</th>
+                        <th>Active</th>
+                        <th>Boss</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    
+                    </tbody>
+                </table>
+                </section>
+                <section id="profile">
+                    <h1 class="page-title">Profile</h1>
+                    <ol class="breadcrumb breadcrumb-small">
+                        <li><a href="#dashboard">Home</a></li>
+                        <li><a href="#profile" data-content="username"></a></li>
+                        <li class="active">Profile</li>
+                    </ol>
+                    <hr>
+                    <table class="profile-table">
+                        <tbody>
+                            <tr>
+                                <td>Name:</td> 
+                                <td data-content="username">User1</td>
+                            </tr>
+                            <tr>
+                                <td>Birthday: </td>
+                                <td data-content="birthday">10.12.1990</td>
+                            </tr>
+                            <tr>
+                                <td>City:</td> 
+                                <td data-content="city">Los Angeles</td>
+                            </tr>
+                            <tr>
+                                <td></td> 
+                                <td><button class="btn btn-primary" data-action="edit-profile">Edit</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                </section>
+                <section id="edit-profile">
+                    <h1 class="page-title">Edit profile</h1>
+                    <ol class="breadcrumb breadcrumb-small">
+                        <li><a href="#dashboard">Home</a></li>
+                        <li><a href="#profile" data-content="username">User name</a></li>
+                        <li><a href="#profile">Profile</a></li>
+                        <li class="active">Edit</li>
+                    </ol>
+                    <hr>
+                    <form>
+                        <div class="edit-profile-form">
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" data-content="username-input">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Birthday" aria-describedby="basic-addon1" data-content="birthday-input">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            </span>
+                            <input type="text" class="form-control" placeholder="City" aria-describedby="basic-addon1" data-content="city-input">
+                        </div>
+                        <button class="btn btn-success btn-profile-save" data-action="save-edited-profile">Save</button>
+                        </div>
+                        
+                    </form>
+                </section>
+            </div>
+        </div>
+        </div>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="app.js"></script>
+        <script type="text/javascript">
+            Application.init(document);
+        </script>
+    </body>
+</html>
